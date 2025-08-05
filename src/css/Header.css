@@ -1,0 +1,79 @@
+.base-header {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  
+  color: inherit;
+  padding: 1rem 2rem;
+  border-bottom: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  opacity: 0.65;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.nav-link-item {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link-item:hover {
+  color: #007BFF;
+}
+
+.settings-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+  color: inherit;
+}
+
+.settings-button:hover {
+  transform: rotate(45deg);
+}
+
+.settings-icon {
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .base-header {
+    padding: 1rem;
+  }
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

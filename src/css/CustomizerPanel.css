@@ -1,0 +1,70 @@
+.customizer-panel-container {
+  padding: 2rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.panel-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input[type='color'] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.theme-select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.slide-in-enter-active,
+.slide-in-leave-active {
+transition: transform 0.3s ease;
+}
+
+.slide-in-enter-from,
+.slide-in-leave-to {
+transform: translateX(-100%);
+}
+
+.slide-in-enter-to,
+.slide-in-leave-from {
+transform: translateX(0);
+}

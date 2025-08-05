@@ -1,0 +1,239 @@
+.main-container {
+  display: flex;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.customizer-sidebar {
+  flex-shrink: 0; 
+  width: 300px;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+.page-content-wrapper {
+  flex: 1; /* Permite que el contenido ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .customizer-sidebar {
+    transform: translateX(-100%);
+  }
+  .customizer-sidebar.is-open {
+    transform: translateX(0);
+  }
+}
+
+.page-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease, transform 0.3s ease; /* Transiciones para el desplazamiento */
+  margin-left: 300px; /* Margen para el sidebar en desktop */
+}
+
+.page-content.content-shifted {
+  transform: translateX(0); 
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 15;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    margin-left: 0;
+  }
+
+  .customizer-sidebar {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+  }
+  
+  .customizer-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .page-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease, transform 0.3s ease;
+    margin-left: 300px; 
+  }
+  
+  .page-content-wrapper.content-shifted {
+    transform: translateX(300px);
+  }
+}
+
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 30;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.is-active {
+    left: 260px;
+  }
+}
+.page-body {
+  flex: 1;
+  padding: 2rem;
+}
+
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 30;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.is-active {
+    left: 260px; 
+  }
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+.hamburger.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger.is-active .hamburger-inner::before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0;
+}
+
+.hamburger.is-active .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
+
+.page-header {
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.page-section {
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: var(--section-title-color, #007BFF);
+  font-weight: 600;
+}
+
+.section-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: var(--section-text-color, #555555);
+}
+
+.page-footer {
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+}
+
+.slide-in-enter-active,
+.slide-in-leave-active {
+  transition: transform 0.3s ease;
+}
+
+.slide-in-enter-from,
+.slide-in-leave-to {
+  transform: translateX(-100%);
+}
+
+.slide-in-enter-to,
+.slide-in-leave-from {
+  transform: translateX(0);
+}
